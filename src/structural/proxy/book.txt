@@ -1,0 +1,20 @@
+Joe: A remote what?
+Frank: Remote proxy. Think about it: we’ve already got the monitor code written, right? We give the
+GumballMonitor a reference to a machine and it gives us a report. The problem is that monitor runs
+in the same JVM as the gumball machine and the CEO wants to sit at his desk and remotely monitor the
+machines! So what if we left our GumballMonitor class as is, but handed it a proxy to a remote object?
+Joe: I’m not sure I get it.
+Jim: Me neither.
+Frank: Let’s start at the beginning... a proxy is a stand in for a real object. In this case, the proxy acts
+just like it is a Gumball Machine object, but behind the scenes it is communicating over the network to
+talk to the real, remote GumballMachine.
+Jim: So you’re saying we keep our code as it is, and we give the monitor a reference to a proxy version
+of the GumballMachine...
+Joe: And this proxy pretends it’s the real object, but it’s really just communicating over the net to the
+real object.
+Frank: Yeah, that’s pretty much the story.
+Joe: It sounds like something that is easier said than done.
+Frank: Perhaps, but I don’t think it’ll be that bad. We have to make sure that the gumball machine
+can act as a service and accept requests over the network; we also need to give our monitor a way to get
+a reference to a proxy object, but we’ve got some great tools already built into Java to help us. Let’s talk
+a little more about remote proxies first...
